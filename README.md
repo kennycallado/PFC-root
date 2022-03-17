@@ -2,22 +2,20 @@
 
 ## Descripción:
 
-Este primer directorio servirá de estructura de directorios y documentación. También incluirá los manifiestos de kubernetes e instrucciones para el despliegue de la aplicación. Quizá también incluyo aquí el compose.yml para desarrollo.
+Este primer directorio servirá de estructura y documentación. También incluirá los manifiestos de kubernetes e instrucciones para el despliegue de la aplicación. Quizá también incluyo aquí el compose.yml para desarrollo.
 
 Incluirá otros módulos que se gestionarán con git (git submodule).
-
-Tengo que pensar como estructurarlo bien. Pero pienso que será una carpeta para la api, otra carpeta para el front.
 
 ## Estructura y documentación:
 
 - kube
-- back
+- server
 - front
 
 ### Módulos que incluye:
 
-- [back]()
-- [front]()
+- [server](https://github.com/kennycallado/PFC-server)
+- [front](https://github.com/kennycallado/PFC-front)
 
 ### Instrucciones:
 
@@ -25,4 +23,14 @@ Para clonar el proyecto con los submódulos:
 
 ``` bash
 git clone --recourse-submodules
+```
+
+OJO:
+
+Para actualizar el HEAD de los submódulos:
+
+``` bash
+git add .
+git commit "UPDATE
+Actualiza puntero HDEAD de submodulos"
 ```
