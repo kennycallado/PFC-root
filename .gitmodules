@@ -1,0 +1,6 @@
+[submodule "server"]
+	path = server
+	url = git@github.com:kennycallado/PFC-server.git
+[submodule "front"]
+	path = front
+	url = git@github.com:kennycallado/PFC-front.git

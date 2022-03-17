@@ -21,3 +21,8 @@ Tengo que pensar como estructurarlo bien. Pero pienso que será una carpeta para
 
 ### Instrucciones:
 
+Para clonar el proyecto con los submódulos:
+
+``` bash
+git clone --recourse-submodules
+```
