@@ -8,7 +8,7 @@ portada
 
 indice
 
-## Resumen del proyecto.
+## Resumen del proyecto
 
 ### Idea inicial.
 
@@ -16,13 +16,17 @@ indice
 
 ### Objetivos requeridos.
 
-## Justificación y objetivos del proyecto.
+## Justificación y objetivos del proyecto
 
-### Propuesta.
+### Front-end.
 
-### Nueva entrada en la web.
+### Actualización.
 
-## Desarrollo del proyecto.
+### Back-end.
+
+### Despliegue.
+
+## Desarrollo del proyecto
 
 ### Análisis del mercado.
 
@@ -32,11 +36,11 @@ indice
 
 ### Resultados obtenidos.
 
-## Conclusiones.
+## Conclusiones
 
-## Líneas futuras.
+## Líneas futuras
 
-Se proponen una serie de mejoras a futuro tanto para el apartado de diseño y apartado visual de la aplicación, como del servidor para brindar más opciones a los usuarios:
+Se proponen una serie de mejoras a futuro tanto para el apartado de visual y el diseño de la aplicación, como del servidor para brindar más opciones a los usuarios:
 
 - Mejorar estado previo de la aplicación (corrección errores).
 - Mejorar estilos en front-end.
