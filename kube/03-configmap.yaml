@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pfc-cm
+  namespace: pfc
+
+data:
+  database_url: "postgres://root:toor@postgres/sensacion"
+  rocket_databases: '{diesel={url="postgres://root:toor@postgres/sensacion"}}'

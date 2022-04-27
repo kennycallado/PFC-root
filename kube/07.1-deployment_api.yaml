@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-dp
+  namespace: pfc
+  labels:
+    app: pfc-api
+
+spec:
+  selector:
+    matchLabels:
+      app: pfc-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pfc-api
+    spec:
+      nodeSelector:
+        role: "server"
+      containers:
+        - name: pfc-api
+          image: kennycallado/sensacion_api:v4-slim-arm64
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 80
+
+          env:
+            - name: ROCKET_DATABASES
+              value: "{diesel={url='postgres://root:toor@postgresdb/sensacio'}}"
+            - name: ROCKET_PORT
+              value: "80"
+            - name: ROCKET_ADDRESS
+              value: "0.0.0.0"
