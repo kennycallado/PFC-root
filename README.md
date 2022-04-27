@@ -31,6 +31,7 @@ Para actualizar el HEAD de los submódulos:
 
 ``` bash
 git add .
-git commit "UPDATE
+git commit -m "UPDATE
 Actualiza puntero HDEAD de submodulos"
+git push
 ```
