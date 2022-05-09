@@ -22,7 +22,7 @@ spec:
         role: "server"
       containers:
         - name: pfc-web
-          image: kennycallado/sensacion_web:v1-nginx-arm64
+          image: kennycallado/sensacion_web:v2-nginx-arm64
           imagePullPolicy: "Always"
           ports:
             - containerPort: 80

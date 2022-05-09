@@ -40,14 +40,14 @@ indice
 
 ## Líneas futuras
 
-Se proponen una serie de mejoras a futuro tanto para el apartado de visual y el diseño de la aplicación, como del servidor para brindar más opciones a los usuarios:
+Se proponen una serie de mejoras a futuro tanto para el apartado de visual y el diseño de la aplicación, como del servidor que brindarian más opciones a los usuarios:
 
 - Mejorar estado previo de la aplicación (corrección errores).
 - Mejorar estilos en front-end.
 - Incluir posibilidad de reserva en diferentes horarios.
 - Crear tests para prevenir código con errores.
 
-La última de estas mejoras, sería la más importante de implementar cuanto antes ya que garantizaría que la aplicación funciona perfectamente.
+La última de estas mejoras, sería la más importante de implementar cuanto antes ya que garantizaría que la aplicación funciona perfectamente aun que se implementen nuevas mejoras.
 
 ## Bibliografía.
 
