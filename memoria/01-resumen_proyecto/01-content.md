@@ -22,7 +22,7 @@ Con estos datos el departamento financiero generará un presupuesto previo al in
 
 ### Idea inicial.
 
-El cliente describe que actualmente los usuarios de la web, si quieren reservar deben ponerse en contacto directamente con el restaurante, y que muchos de los usuarios desisten de reservar por tener que usar medios externos a la web. En principio quiere integrar las reservas desde la web solo para el servicio de comidas (no cenas) y sin selección de hora. El usuario solo tendría que poner una fecha ver si hay disponibilidad y si es así, escribir su nombre y enviar. No quiere que los usuarios tengan que registrarse para poder reservar y en caso de querer hacer alguna modificación en la reserva, el usuario llamaría al restaurante.
+El cliente describe que actualmente los usuarios de la web, si quieren reservar deben ponerse en contacto directamente con el restaurante, y que muchos de los usuarios desisten de reservar por tener que usar medios externos a la web. En principio, quiere integrar las reservas desde la web solo para el servicio de comidas (no cenas) y sin selección de hora. El usuario solo tendría que poner una fecha ver si hay disponibilidad y si es así, escribir su nombre y enviar. No quiere que los usuarios tengan que registrarse para poder reservar y en caso de querer hacer alguna modificación en la reserva, el usuario llamaría al restaurante.
 
 Este proyecto solo se encarga de mostrar la disponibilidad dada una fecha y permitir crear una reserva a partir de dicha disponibilidad. Otro equipo se encargaría de desarrollar un administrador que permita al cliente gestionar las reservas y las mesas.
 
@@ -33,6 +33,10 @@ El cliente nos entrega el código fuente de la página actual para que sirva de 
 ### Objetivos requeridos.
 
 Tras el estudio y algunas reuniones con el cliente hemos determinado que en el menú de navegación de la web, se añadirá un nuevo botón _reserva_, que al ser pulsado iniciará Angular para mostrar la disponibilidad y ayudará al usuario a reservar. Para que esto funcione también se ha determinado que necesitaremos una base de datos con las mesas y las reservas. Para comunicar la base de datos con el cliente se creará una api en el lado del servidor.
+
+La imagen muestra estado actual del menú de navegación de la web:
+
+![imagen_1](images/imagen_1.jpg)
 
 Una vez todo esto funcione se generarán las imágenes de docker necesarias para el posterior despliegue de la aplicación en un servidor de kubernetes que el cliente ya tiene contratado.
 

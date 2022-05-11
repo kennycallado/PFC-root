@@ -2,13 +2,21 @@
 
 ### Análisis del mercado.
 
-Buscar algunas páginas de restaurantes con posibilidad de reserva en la web.
+Para el estudio previo se analizó el mercado levemente, consultando algunas páginas que ofrecen la misma funcionalidad en la actualidad.
 
-http://www.rutadelveleta.com/reservas/
+#### Ruta del veleta [Enlace](http://www.rutadelveleta.com/reservas/).
 
-Mejor como este:
+Tras estudiar un poco esta página se determinó que la experiencia de usuario no es buena, a pesar de que se pueden realizar reservas en el restaurantes, resulta difícil realizar la transacción por lo complejo de su formulario y en ningún caso muestra disponibilidad.
 
-https://bodegaelcapricho.com/es/reservar/
+#### Bodega el Capricho [Enlace](https://bodegaelcapricho.com/es/reservar/)
+
+Esta otra opción es mucho más atractiva visualmente y permite en pocos pasos realizar la reserva de una mesa en el restaurante. Pero finalmente el cliente se encuentra con un complejo formulario por rellenar antes de terminar el proceso.
+
+#### Conclusión
+
+Tras observar estas y otras páginas se decidió optar por un modelo mucho más sencillo en el que el usuario no tuviera que rellenar un gran formulario con muchos datos. Al igual que al reservar por teléfono, normalmente se pide hora, número de comensales y un nombre para la reserva, en la web no se mostrarán complejos formularios, solo lo mínimo.
+
+Este enfoque expone la posibilidad de que se reciban reservas falsas o que malintencionadamente alguien bloqueé el sistema. Por esta razón se ha decidido con el cliente, mostrar solo una parte de la disponibilidad en la web para evitar que esta vulnerabilidad suponga un desastre financiero.
 
 ### Metodologías utilizadas.
 
@@ -16,13 +24,13 @@ Al constar de una sola persona el grupo de trabajo, se a optado por implementar 
 
 Entorno de desarrollo -> creación apis -> contenedor api -> proyecto angular -> contenedor web -> despliegue.
 
-Si al desarrollar una etapa se ha detectado un error en la anterior se a reparado indistintamente ya que no existe un sistema de generación de tickets para su posterior reparación.
+Si al desarrollar una etapa se ha detectado un error en la anterior se a reparado indistintamente ya que no existe un sistema de generación de tickets (issue tracking system) para su posterior reparación.
 
 Creo que para proyectos unipersonales es una buena opción y cualquier alternativa ágil supondría un incremento en complejidad que debería estudiarse.
 
 ### Descripción de los componentes.
 
-Para este proyecto he creado tres repositorios diferentes, front, server, root. Cada uno de ellos tiene una función específica dentro del conjunto pero se puede trabajar en ellos de forma independiente. Para esto he usado _git submodule_, esta funcionalidad permite especificar dentro de un repositorio si directorio hace referencia ha otro repositorio diferente. De este modo el módulo _root_ además de su propio contenido también hace referencia a un commit concreto de cada uno los otros repositorios. Este enfoque permite trabajar de forma independiente en los módulos y según avanza el proyecto actualizar el commit al que hace referencia la raíz para que así el repositorio principal quede actualizado.
+Para este proyecto he creado tres repositorios diferentes, front, server, root. Cada uno de ellos tiene una función específica dentro del conjunto pero se puede trabajar en ellos de forma independiente. Para esto he usado _git submodule_, esta funcionalidad permite especificar dentro de un repositorio si algún directorio hace referencia ha otro repositorio diferente. De este modo el módulo _root_ además de su propio contenido también hace referencia a un commit concreto de cada uno los otros repositorios. Este enfoque permite trabajar de forma independiente en los módulos y según avanza el proyecto actualizar el commit al que hace referencia la raíz para que así el repositorio principal quede actualizado.
 
 Es especialmente útil para  trabajar con diferentes equipos sobre el mismo proyecto, pero he pensado que podría ser muy buena idea implementarlo para mantener siempre la independencia entre los diferentes módulos sin que el trabajo en uno afecte a otro.
 
@@ -43,7 +51,7 @@ El usuario tiene la posibilidad de consultar otra fecha diferente y una vez eleg
 
 Este componente sirve de intermediario entre la base de datos y la aplicación web. Su función es gestionar las peticiones que llegan desde el front lo más eficientemente posible, consultando la base de datos y devolviendo la información correcta.
 
-Para este cometido he decidido usar el no tan conocido framework de Rust Rocket. Se caracteriza por su seguridad, estabilidad y velocidad. A pesar de lo complejo que pueda parecer, una vez que conocer un poco el lenguaje y lees la documentación resulta muy sencillo para la creación servidores web.
+Para este cometido he decidido usar el no tan conocido framework de Rust, Rocket. Se caracteriza por su seguridad, estabilidad y velocidad. A pesar de lo complejo que pueda parecer, una vez que conocer un poco el lenguaje y lees la documentación resulta muy sencillo para la creación servidores web.
 
 Ya que este módulo se encarga de comunicarse con la base de datos, también integra las migraciones, que permiten al servidor crear las tablas y las relaciones necesarias en la base de datos previamente creada. Se ha decidido usar Postgresql como gestor de base de datos por sus muchas funcionalidades pero sobre todo por la gran velocidad de respuesta que tiene.
 
