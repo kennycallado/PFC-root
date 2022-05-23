@@ -6,6 +6,18 @@ line-height: 1.5rem;
 
 portada
 
+{
+
+Extracto:
+Este documento describe una forma de implementar una nueva función en un sitio web existente. Pasa por la motivación inicial, la estimación de tiempos, el análisis comercial, la descripción de los componentes y las conclusiones. También cubre opiniones personales sobre las tecnologías aplicadas y cómo están cobrando importancia en la actualidad.
+
+Abstract:
+This document describe a way to implement a new feature in an existing website. It goes through the initial motivation, time estimation, business analysis, components descriptions and conclusions. It also covers personal opinions about the technologies applied and how then are getting importance in nowdays.
+
+}
+
+abstract
+
 indice
 
 ## Resumen del proyecto
