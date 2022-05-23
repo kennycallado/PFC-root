@@ -1,0 +1,51 @@
+Hola,
+
+Mi nombre es Raúl Callado Montero del curso de Desarrollo de aplicaciones web y a continuación voy a presentar el proyecto final de ciclo.
+
+En esta presentación voy a echar un vistázo rápido sobre los componentes y características del proyecto. En una segunda parte iniciaré estos en un entorno local usando contenedores. A continuación mostraré la aplicación desde un navegador.
+
+## MÓDULOS
+
+A nivel estructural el proyecto está formado principalmente por tres módulos. Una de las principales características es que se puede trabajar en cada uno de ellos sin interfenir en los otros.
+
+## ROOT
+
+Es la raíz del proyecto, que además de contener el resto de módulos también sirve de repositorio para los manifiestos de kubernetes útiles para el despligue de la aplicación en producción y también para la memoria del proyecto.
+
+Usa git submodules, github como repositorio online y como ya he comentado integra los manifiestos de kubernetes.
+
+## CLIENTE
+
+Este módulo contiene la interfaz de usuario que se renderiza a través de un navegador web. Implmenta las principales tecnologías para el front-end como: html, css, bootstrap y para javascript he usado Angular.
+
+Este módulo está contenerizado usando una imágen base de nginx, el cual es un servidor web muy popular.
+
+## SERVIDOR
+
+Este módulo se ejecuta en el lado del servidor. Contiene los scripts de base de datos y la api que intermedia entre esta y la interfaz web. El código está en rust y he usado el framework rocket. Todo ello lo he endevido en un contenedor de docker para su fácil distribución.
+
+# PUESTA EN MARCHA
+
+Ahora voy a pasar a la terminal para iniciar el servidor usando contenedores.
+
+-- TERMINAL
+
+He preparado un fichero docker-compose para que todo arranque fácilmente usando un solo comando. Esto crea un entorno de contenedores donde cada servicios toma los recursos que necesita y expone los puertos de comunicación al resto de contenedores.
+
+Ahora la aplicación se ejecuta en mi ordenador sin tener que preocuparme de las dependencias que tiene cada uno de los contenedores, lo único que necesito es docker. Se está ejecutando un contenedor con la base de datos, otro contenedor con el módulo servidor y otro con el módulo cliente.
+
+-- NAVEGADOR
+
+Como se describe en la memoria del proyecto, la base web sobre la que he trabajado ya existía. Era una web estática que trata sobre un restaurante, describe los servicios, cotiene información de contacto, imágenes, textos y demás...
+
+Sobre esta base he añadido el botón `reserva`. Al clicarlo accede a la ruta donde se inicia la parte dinámica. Esta parte ayuda al usuario a realizar una reserva en el restaurante.
+
+Para ello inicialmente muestra la disponibilidad de hoy mismo, la fecha de reserva se puede modificar fácilmente y esto actualiza la disponibilidad del día seleccionado.
+
+Al clickar sobre el botón de reserva de alguna mesa se accede a un formulario que permite formalizar la reserva. Este formulario contiene algunas validaciones, pero si la información es correcta finalmente muestra un mensaje de que la reserva se ha registrado correctamente.
+
+Acto seguido se actualiza la disponibilidad del día seleccionado con lo que el usuario puede ver que la mesa reservada ya no está disponible. Esto siempre da cierta seguridad que todo fúe bien.
+
+## AGRADECIMIENTO
+
+Como resumen, este proyecto creo que se adapta al contenido que hemos aprendido, integrando gran parte de las asignaturas del curso. También he procurado que fuese un proyecto, aunque no muy ambicioso pero que fuese capaz de finalizar en las 40 horas de dedicación estipuladas. Y como valor añadido también he investigado y estudiado un nuevo lenguaje, framework y nuevas funcionalidades ofrecer un producto con las tecnologías más actuales y punteras del sector.
