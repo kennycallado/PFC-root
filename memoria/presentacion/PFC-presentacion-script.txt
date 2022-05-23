@@ -30,7 +30,11 @@ Ahora voy a pasar a la terminal para iniciar el servidor usando contenedores.
 
 -- TERMINAL
 
-He preparado un fichero docker-compose para que todo arranque fácilmente usando un solo comando. Esto crea un entorno de contenedores donde cada servicios toma los recursos que necesita y expone los puertos de comunicación al resto de contenedores.
+Con el siguiente comando se iniciará el contenedor con la aplicación cliente. Este contenedor está preparado para conectarse a la api que tengo funcionando en producción y accesible desde internet.
+
+``` bash
+podman run -p 8000:80 kennycallado/sensacion_web:v2-nginx-amd64
+```
 
 Ahora la aplicación se ejecuta en mi ordenador sin tener que preocuparme de las dependencias que tiene cada uno de los contenedores, lo único que necesito es docker. Se está ejecutando un contenedor con la base de datos, otro contenedor con el módulo servidor y otro con el módulo cliente.
 
