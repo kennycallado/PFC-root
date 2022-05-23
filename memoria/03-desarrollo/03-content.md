@@ -2,7 +2,7 @@
 
 ### Análisis del mercado.
 
-Para el estudio previo se analizó el mercado levemente, consultando algunas páginas que ofrecen la misma funcionalidad en la actualidad.
+Para el estudio previo se analizó el mercado, consultando algunas páginas que ofrecen la misma funcionalidad en la actualidad.
 
 #### Ruta del veleta [Enlace](http://www.rutadelveleta.com/reservas/).
 
@@ -61,7 +61,7 @@ Tras la compilación de este módulo se obtiene un binario que se puede ejecutar
 
 #### root
 
-El componente raíz del proyecto tiene dos funcionalidades principales. Una es contener la documentación relacionada con el proyecto, así como describir el proceso de despliegue de la aplicación. Y por otro lado sirve para mantener las referencias a los commit concretos de cada submodulo. Esto quiere decir, que al haber implementado git submodule, cada vez que uno de los submodulos se actualiza no afecta directamente al proyecto, sino que desde la raíz deberá actualizarse la referencia de cada submodulo directamente. Esto permite actualizar, testear la aplicación y se algo no funciona volver a apuntar a un commit anterior hasta que se repare el error y se pueda volver a actualizar testear y finalmente desplegar.
+El componente raíz del proyecto tiene dos funcionalidades. Una es contener la documentación relacionada con el proyecto, así como describir el proceso de despliegue de la aplicación. Y por otro lado sirve para mantener las referencias a los commit concretos de cada submodulo. Esto quiere decir, que al haber implementado git submodule, cada vez que uno de los submodulos se actualiza no afecta directamente al proyecto, sino que desde la raíz deberá actualizarse la referencia de cada submodulo directamente. Esto permite actualizar, testear la aplicación y se algo no funciona volver a apuntar a un commit anterior hasta que se repare el error y se pueda volver a actualizar testear y finalmente desplegar.
 
 Tanto el módulo front como server están pensados para ser incrustados en una imagen de docker y ser consumidos como contenedores en un servidor de kubernetes. Por esta razón en el módulo principal se acompañan los manifiestos necesarios para que todo se despliegue correctamente en la nube.
 
@@ -71,9 +71,7 @@ También se ha agregado el borrador del proyecto en este mismo repositorio para 
 
 ### Resultados obtenidos.
 
-No tengo muy claro que poner aquí.
-
-Los objetivos establecidos para el proyecto se ha cumplido en su totalidad y se han cumplido los plazos impuestos, 40 horas de desarrollo.
+Los objetivos establecidos para el proyecto se ha cumplido en su totalidad y en los plazos impuestos, 40 horas de desarrollo.
 
 **TODO**:
 - [x] Integrar botón reserva en web actual.
@@ -83,4 +81,4 @@ Los objetivos establecidos para el proyecto se ha cumplido en su totalidad y se 
 - [x] Usar Angular para interactuar con el servidor.
 - [x] Contenerizar la aplicación.
 
-Como se aprecia en la lista, todos los _todo_ se han completado y la aplicación actualmente se está ejecutando correctamente en un laboratorio domestico online, para que el cliente pueda testearla antes de la entrega final. Una vez que el cliente diese su visto bueno, se procesaría el pago final de la aplicación y se le entregaría un fichero con todo el código, documentación así como los derechos legales sobre lo entregado. Como parte del contrato también se desplegaría la aplicación y se mantendría durante los primeros meses haciendo revisiones y comprobando la telemetría que ofrecen los servidores kubernetes. Al concluir este periodo se le presentaría al cliente un dosier de posibles mejoras y una propuesta de mantenimiento a largo plazo.
+Como se aprecia en la lista, todos los _todo_ se han completado y la aplicación actualmente se está ejecutando correctamente en un laboratorio domestico online, para que el cliente pueda testearla antes de la entrega final. Una vez que el cliente diese su visto bueno, se procesaría el pago final de la aplicación y se le entregaría un fichero con todo el código fuente, documentación así como los derechos legales sobre lo entregado. Como parte del contrato también se desplegaría la aplicación y se mantendría durante los primeros meses haciendo revisiones y comprobando la telemetría que ofrecen los servidores kubernetes. Al concluir este periodo se le presentaría al cliente un dosier de posibles mejoras y una propuesta de mantenimiento a largo plazo.
