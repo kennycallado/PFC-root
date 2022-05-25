@@ -2,15 +2,14 @@
 
 ## Descripción:
 
-Este primer directorio servirá de estructura y documentación. También incluirá los manifiestos de kubernetes e instrucciones para el despliegue de la aplicación. Quizá también incluyo aquí el compose.yml para desarrollo.
+El componente raíz del proyecto tiene dos funcionalidades. Una es contener la documentación relacionada con el proyecto, así como describir el proceso de despliegue de la aplicación a través de los manifiestos de kubernetes. Y por otro lado sirve para mantener las referencias a los commit concretos de cada submodulo. Esto quiere decir, que al haber implementado git submodule, cada vez que uno de los submodulos se actualiza no afecta directamente al proyecto, sino que desde la raíz deberá actualizarse la referencia de cada submodulo directamente. Esto permite actualizar, testear la aplicación y se algo no funciona volver a apuntar a un commit anterior hasta que se repare el error y se pueda volver a actualizar testear y finalmente desplegar.
 
-Incluirá otros módulos que se gestionarán con git (git submodule).
+## Estructura:
 
-## Estructura y documentación:
-
-- kube
-- server
 - front
+- kube
+- memoria
+- server
 
 ### Módulos que incluye:
 
@@ -25,13 +24,15 @@ Para clonar el proyecto con los submódulos:
 git clone --recourse-submodules
 ```
 
-OJO:
+En cada módulo seguir las instrucciones del README para compilar y ejecutar el componente.
 
-Para actualizar el HEAD de los submódulos:
+<!-- OJO: -->
 
-``` bash
-git add .
-git commit -m "UPDATE
-Actualiza puntero HDEAD de submodulos"
-git push
-```
+<!-- Para actualizar el HEAD de los submódulos: -->
+
+<!-- ``` bash -->
+<!-- git add . -->
+<!-- git commit -m "UPDATE -->
+<!-- Actualiza puntero HDEAD de submodulos" -->
+<!-- git push -->
+<!-- ``` -->
