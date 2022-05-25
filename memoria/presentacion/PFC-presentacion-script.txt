@@ -2,27 +2,27 @@ Hola,
 
 Mi nombre es Raúl Callado Montero del curso de Desarrollo de aplicaciones web y a continuación voy a presentar el proyecto final de ciclo.
 
-En esta presentación voy a echar un vistázo rápido sobre los componentes y características del proyecto. En una segunda parte iniciaré el contenedor cliente en un entorno local usando contenedores. Y por último mostraré la aplicación desde un navegador.
+En esta presentación voy a echar un vistazo rápido sobre los componentes y características del proyecto. En una segunda parte iniciaré el contenedor cliente en un entorno local usando contenedores. Y por último mostraré la aplicación desde un navegador.
 
 ## MÓDULOS
 
-A nivel estructural el proyecto está formado principalmente por tres módulos. Una de las principales características es que se puede trabajar en cada uno de ellos sin interfenir en los otros.
+A nivel estructural el proyecto está formado principalmente por tres módulos. Una de las principales características es que se puede trabajar en cada uno de ellos sin interferir en los otros.
 
 ## ROOT
 
-Es la raíz del proyecto, que además de contener el resto de módulos también sirve de repositorio para los manifiestos de kubernetes para el despligue de la aplicación en producción y también contiene la memoria del proyecto.
+Es la raíz del proyecto, que además de contener el resto de los módulos también sirve de repositorio para los manifiestos de kubernetes para el despliegue de la aplicación en producción y también contiene la memoria del proyecto.
 
 Usa git submodules, github como repositorio remoto y kubernetes.
 
 ## CLIENTE
 
-Este módulo contiene la interfaz de usuario que se renderiza a través de un navegador web. Implmenta las tecnologías para el front-end como: html, css, bootstrap y para javascript he usado Angular.
+Este módulo contiene la interfaz de usuario que se renderiza a través de un navegador web. Implementa las tecnologías para el front-end como: html, css, bootstrap y para javascript he usado Angular.
 
-Este módulo está contenerizado usando una imágen base de nginx, el cual es un servidor web muy popular.
+Este módulo está contenerizado usando una imagen base de nginx, el cual es un servidor web muy popular.
 
 ## SERVIDOR
 
-Este módulo se ejecuta en el lado del servidor. Contiene los scripts de base de datos y la api que intermedia entre esta y la interfaz web. El código está escrito en rust y he usado el framework rocket. Todo ello lo he endevido en un contenedor de docker para su fácil distribución.
+Este módulo se ejecuta en el lado del servidor. Contiene los scripts de base de datos y la api que intermedia entre esta y la interfaz web. El código está escrito en rust y he usado el framework rocket. Todo ello lo he endebido en un contenedor de docker para su fácil distribución.
 
 # PUESTA EN MARCHA
 
@@ -48,7 +48,7 @@ Para ello inicialmente muestra la disponibilidad de hoy, la fecha de reserva se 
 
 Al clicar sobre el botón de reserva de alguna mesa se accede a un formulario que permite formalizar la reserva. Este formulario contiene algunas validaciones, pero si la información es correcta finalmente muestra un mensaje de que la reserva se ha registrado correctamente.
 
-Acto seguido se actualiza la disponibilidad del día seleccionado con lo que el usuario puede ver que la mesa reservada ya no está disponible. Esto siempre da cierta seguridad que todo fúe bien.
+Acto seguido se actualiza la disponibilidad del día seleccionado con lo que el usuario puede ver que la mesa reservada ya no está disponible. Esto siempre da cierta seguridad que todo fue bien.
 
 ## AGRADECIMIENTO
 
