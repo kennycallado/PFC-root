@@ -2,54 +2,54 @@ Hola,
 
 Mi nombre es Raúl Callado Montero del curso de Desarrollo de aplicaciones web y a continuación voy a presentar el proyecto final de ciclo.
 
-En esta presentación voy a echar un vistazo rápido sobre los componentes y características del proyecto. En una segunda parte iniciaré el contenedor cliente en un entorno local usando contenedores. Y por último mostraré la aplicación desde un navegador.
+En una primera parte de la presentación voy a echar un vistazo rápido sobre los componentes y funcionalidades del proyecto. A continuación iniciaré localmente la aplicación usando contenedores para el servidor y Angular en desarrollo. Y por último mostraré la aplicación desde un navegador.
 
 ## MÓDULOS
 
-A nivel estructural el proyecto está formado principalmente por tres módulos. Una de las principales características es que se puede trabajar en cada uno de ellos sin interferir en los otros.
+A nivel estructural el proyecto está formado principalmente por tres módulos root, cliente y servidor. Una de las principales características es que se puede trabajar en cada uno de ellos sin interferir en los otros.
 
 ## ROOT
 
-Es la raíz del proyecto, que además de contener el resto de los módulos también sirve de repositorio para los manifiestos de kubernetes para el despliegue de la aplicación en producción y también contiene la memoria del proyecto.
+Es la raíz del proyecto, que además de contener el resto de los módulos también sirve de repositorio para los manifiestos de kubernetes así como la memoria del proyecto.
 
 Usa git submodules, github como repositorio remoto y kubernetes.
 
 ## CLIENTE
 
-Este módulo contiene la interfaz de usuario que se renderiza a través de un navegador web. Implementa las tecnologías para el front-end como: html, css, bootstrap y para javascript he usado Angular.
+Contiene la interfaz de usuario que se renderiza a través de un navegador. Implementa las tecnologías para el front-end: html, css, bootstrap y para javascript he usado Angular.
 
 Este módulo está contenerizado usando una imagen base de nginx, el cual es un servidor web muy popular.
 
 ## SERVIDOR
 
-Este módulo se ejecuta en el lado del servidor. Contiene los scripts de base de datos y la api que intermedia entre esta y la interfaz web. El código está escrito en rust y he usado el framework rocket. Todo ello lo he endebido en un contenedor de docker para su fácil distribución.
+Es el back-end de la aplicación. Contiene los scripts de base de datos y la api que intermedia entre esta y la interfaz web. El código está escrito en rust y he usado el framework rocket
+
+Y todo ello lo he endebido en un contenedor de docker para su fácil distribución.
 
 # PUESTA EN MARCHA
 
-Ahora voy a pasar a la terminal para iniciar la interfaz usando contenedores.
+Ahora voy a pasar a la terminal para iniciar el proyecto usando contenedores.
 
 -- TERMINAL
 
-Con el siguiente comando se iniciará el contenedor con el módulo cliente. Este contenedor está preparado para conectarse a la api que tengo funcionando en producción y accesible desde internet.
-
-``` bash
-podman run -p 8000:80 kennycallado/sensacion_web:v2-nginx-amd64
-```
-
-Ahora la aplicación se ejecuta en mi ordenador sin tener que preocuparme de las dependencias que tiene cada uno de los contenedores, lo único que necesito es docker.
+Como se puede ver he preparado un fichero docker-compose que levantará la base de datos y el sevidor que expone la api. Por otro lado levantaré el servidor de desarrollo de Angular. La razón de que haga esto es que la imágen en producción realiza peticiones a la api en producción.
 
 -- NAVEGADOR
 
-Como se describe en la memoria del proyecto, la base web sobre la que he trabajado ya existía. Era una web estática que trata sobre un restaurante, describe los servicios, información de contacto, imágenes, textos y demás...
+Al acceder al punto de entrada que hemos creado, se puede observar la disponibilidad de mesas para el día de hoy. Fácilmente podríamos cambiar la fecha y esto nos mostraría la disponibilidad de dicha fecha.
 
-Sobre esta base he añadido el botón `reserva`. Al clicarlo accede a la ruta donde se inicia la parte dinámica. Esta parte ayuda al usuario a realizar una reserva en el restaurante.
+En este punto podemos pulsar en cualquiera de estos botones para reservar una mesa concreta. Esto nos muestra un sencillo formulario donde se nos pide nombre y número de comensales.
 
-Para ello inicialmente muestra la disponibilidad de hoy, la fecha de reserva se puede modificar fácilmente y esto actualiza la disponibilidad del día seleccionado.
+En caso de completar correctamente el formulario y enviar se nos informa del número de reserva.
 
-Al clicar sobre el botón de reserva de alguna mesa se accede a un formulario que permite formalizar la reserva. Este formulario contiene algunas validaciones, pero si la información es correcta finalmente muestra un mensaje de que la reserva se ha registrado correctamente.
+Como se puede observar la mesa ya no está disponible en la tabla.
 
-Acto seguido se actualiza la disponibilidad del día seleccionado con lo que el usuario puede ver que la mesa reservada ya no está disponible. Esto siempre da cierta seguridad que todo fue bien.
+-- https://sensacion.kennycallado.dev
+
+Como se describe en la memoria, parte de la web ya existia previamente, nosotros solo hemos incorporado este botón de reserva y la lógica desde ese punto hasta la formalización de la reserva.
 
 ## AGRADECIMIENTO
 
-Como resumen, este proyecto creo que se adapta al contenido que hemos aprendido, integrando gran parte de las asignaturas del curso. También he procurado que fuese un proyecto, aunque no muy ambicioso pero que fuese capaz de finalizar en las 40 horas de dedicación estipuladas. Y como valor añadido también he investigado y estudiado un nuevo lenguaje, framework y nuevas funcionalidades ofrecer un producto con las tecnologías más actuales y punteras del sector.
+Como resumen, este proyecto creo que se adapta al contenido que hemos aprendido, integrando gran parte de las asignaturas del curso. También he procurado que fuese un proyecto, aunque no muy ambicioso pero que fuese capaz de finalizar en las 40 horas de dedicación estipuladas. Y como valor añadido también he investigado y estudiado un nuevo lenguaje, framework y nuevas funcionalidades para ofrecer un producto con las tecnologías más actuales y punteras del sector.
+
+Gracias por su atención!

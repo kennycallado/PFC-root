@@ -1,0 +1,29 @@
+version: "3.1"
+
+services:
+  database:
+    image: postgres:12-alpine
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: sensacion
+      POSTGRES_USER: sensacion-user
+      POSTGRES_PASSWORD: sensacion-pass
+
+  server:
+    image: kennycallado/sensacion_api:v4-slim-arm64
+    links:
+      - "database"
+    ports:
+      - 8000:8000
+    environment:
+      - ROCKET_DATABASES={diesel={url="postgres://sensacion-user:sensacion-pass@database/sensacion"}}
+      - ROCKET_PORT=8000
+      - ROCKET_ADDRESS-"0.0.0.0"
+
+  # cliente:
+  #   image: kennycallado/sensacion_web:v1.0-nginx-arm64
+  #   ports:
+  #     - 8080:80
